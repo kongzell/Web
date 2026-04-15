@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Login&register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+    <nav> <!--เเท็ก nav ทำหน้าที่สร้าง menu -->
+        <!-- พิมพ์ ใcontainer กดเลือกคลาสนี้ -->
+        <div class="container2">
+            <div class="nav-con">
+                <div class="logo"><a href="index.html">Mobile Phone</a></div>
+                <!-- พิมพ์ ul กดEnter เเล้วพิมพ์ class = "menu" เอง -->
+                <ul class="menu">
+                    <li><a href="index.html" class="maincontent-btn">Home</a></li>
+                    <li><a href=" " class="maincontent-btn">Purchase</a></li>
+                    <li><a href="list_item.html" class="maincontent-btn">Produce</a></li>
+                    <li><a href="Login&register.html" class="maincontent-btn">Register</a></li>
+                    <li><a href=" " class="maincontent-btn">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <div id="container">
+        <div class="Login">
+            <div class="content">
+                <h1>Log in</h1>
+                    <form action="">
+                        <div class="logininput">
+                            <input type="text" required><label for="email">Email</label>
+                        </div>
+                        <div class="logininput">
+                            <input type="password" required><label for="password">Password</label>
+                        </div>
+                        <span class="remember">Remember</span>
+                        <span class="forgot">Forgot Password</span>
+                        <span class="clearfix"></span>
+                        <button onclick="return false;">Login</button>
+                    </form>
+                <span class="loginwith">Or Login with</span>
+
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+
+                <span class="copy">&copy 2026</span>
+            </div>
+        </div>
+
+        <div class="page front">
+            <div class="content">
+                <i class="fa-solid fa-user-plus userIcon"></i>
+
+                <h1>Register Here</h1>
+                <button id="register">Register<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="page back">
+            <div class="content">
+                <i class="fa-solid fa-right-to-bracket bracketIcon"></i>
+
+                <h1>Back to Login</h1>
+                <button id="Login"><i class="fa-solid fa-arrow-left"></i>Login</button>
+            </div>
+        </div>
+
+        <div class="register">
+            <div class="content">
+                <h1>Sign Up</h1>
+                
+                    <form action="">
+                        <div class="inputBox">
+                            <input type="text" name="name" id="name" required>
+                            <label for="name">Firstname</label>
+                            <span style="color: crimson;">*</span>&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="surname" id="surname" required>
+                            <label for="surname">Lastname</label>
+                            <span style="color: crimson;">*</span> <br>
+                        </div> 
+                        <div class="inputBox">
+                            <input type="date" name="date" id="date">&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="age" id="age" required> 
+                            <label for="age">Age</label><br><br>
+                        </div>   
+                        <div class="inputBox2"> 
+                            <label for="Gender">Gender</label>
+                            <input type="checkbox" name="Gender" id="Gender">male
+                            <input type="checkbox" name="Gender" id="Gender">female <br>
+                        </div> 
+                        <div class="inputBox">  
+                            <input type="text" name="Email" id="Email" required>
+                            <label for="Email">Email</label>
+                            <span style="color: crimson;">*</span> <br>
+                            <br>
+                        </div> 
+                        <div class="inputBox">  
+                            <input type="password" name="password" id="password" required>
+                            <label for="Password">Password</label><br><br>
+                        </div> 
+                        <div class="inputBox">   
+                            <input type="password" name="Confirm" id="Confirm" required>
+                            <label for="Confirm">Confirm password</label>
+                        </div> 
+                        <span class="clearfix"></span>
+                        <button onclick="registerUser()">Register</button>
+                    </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+<script src="Login&register.js"></script>
+
+<script>
+        function registerUser() {
+            // เช็ค password ตรงกันไหม
+            const password = document.getElementById('password').value
+            const confirm  = document.getElementById('Confirm').value
+
+            if (password !== confirm) {
+                alert('Password ไม่ตรงกัน!')
+                return
+            }
+
+            // เก็บค่าจาก form
+            const data = {
+                name:    document.getElementById('name').value,
+                surname: document.getElementById('surname').value,
+                date:    document.getElementById('date').value,
+                age:     document.getElementById('age').value,
+                gender:  document.querySelector('input[name="Gender"]:checked')?.value || '',
+                email:   document.getElementById('Email').value,
+                password: password
+            }
+
+            // ✅ ส่งข้อมูลไป server
+            fetch('http://localhost:8000/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(result => {
+                alert(result.message)
+            })
+            .catch(err => console.error('Error:', err))
+        }
+    </script>
+</html>

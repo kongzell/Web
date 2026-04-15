@@ -8,149 +8,135 @@
     <link rel="stylesheet" href="list_item.css">
 </head>
 <body>
+    <nav> <!--เเท็ก nav ทำหน้าที่สร้าง menu -->
+        <!-- พิมพ์ ใcontainer กดเลือกคลาสนี้ -->
+        <div class="container">
+            <div class="nav-con">
+                <div class="logo"><a href="index.html">Mobile Phone</a></div>
+                <!-- พิมพ์ ul กดEnter เเล้วพิมพ์ class = "menu" เอง -->
+                <ul class="menu">
+                    <li><a href="index.html" class="maincontent-btn">Home</a></li>
+                    <li><a href=" " class="maincontent-btn">Purchase</a></li>
+                    <li><a href="list_item.html" class="maincontent-btn">Product</a></li>
+                    <li><a href="Login&register.html" class="maincontent-btn">Register</a></li>
+                    <li><a href=" " class="maincontent-btn">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="product">
     <div class="container">
-        <div class="product-con">
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="17 pro max.webp" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="iphone-17-lavender-01.webp" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="17_AIR_W4.jpg" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="iphone-16-pro-max.webp" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="iphone-16.webp" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="15 pro max.jpg" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="iPhone_15.webp" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="iPhone-16-Plus.webp" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="iphone-17-plus.jpg" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
-
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="iPhone_15_Plus.jpg" alt="">
-                </div>
-                <div class="product-detail">
-                    .....................................
-                    .....................................
-                    .....................................
-                </div>
-                <div class="product-price">
-                    <div class="product-right">10 บาท</div>
-                </div>
-            </div>
+        <div class="product-con" id="product-con">
 
         </div>
     </div>
+    </section>
+
+    <div class="Addproduct" id="Addproduct">
+        <button class="btnAddproduct" onclick="openModal()">Add Product</button>
+    </div>
+
+    <div id="Add">
+        <div class="Add-box">
+            <h3>Add Product</h3>
+
+            <label>Produce name</label>
+            <input type="text" id="p-name" placeholder="Product Name">
+
+            <label>Price</label>
+            <input type="number" id="p-price" placeholder="Price">
+
+            <label>Picture</label>
+            <input type="text" id="p-detail" placeholder="Such as images/product.jpg">
+
+            <div class="Add-buttons">
+                <button class="btn-save" onclick="addProduct()">Submit</button>
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-Add">
+    <div class="success-box">
+        <div class="success-icon">✅</div>
+        <h3>Successfully!</h3>
+        <p>Product ID : <span id="success-id"></span></p>
+        <button class="btn-ok" onclick="closeSuccess()">Ok</button>
+    </div>
+</div>
 </body>
+<script>
+function loadProducts() {
+    fetch('http://localhost:8000/products')
+    .then(res => res.json())
+    .then(data => {
+        const container = document.getElementById('product-con')
+        container.innerHTML = ''
+        data.forEach(product => {
+            const item = `
+                <div class="product-item">
+                    <div class="product-img">
+                        <img src="${product.Detail}" alt="${product.Name}">
+                    </div>
+                    <div class="product-detail">
+                        <h3>${product.Name}</h3>
+                    </div>
+                    <div class="product-price">
+                        <p>${product.Price} บาท</p>
+                        <a href="" class="content-btn">สั่งซื้อ</a>
+                    </div>
+                </div>
+            `
+            container.innerHTML += item
+        })
+    })
+    .catch(err => console.error('Error:', err))
+}
+
+function openModal() {
+    document.getElementById('Add').style.display = 'flex'
+}
+
+function closeModal() {
+    document.getElementById('Add').style.display = 'none'
+    document.getElementById('p-name').value = ''
+    document.getElementById('p-price').value = ''
+    document.getElementById('p-detail').value = ''
+}
+
+function addProduct() {
+    const name   = document.getElementById('p-name').value
+    const price  = document.getElementById('p-price').value
+    const detail = document.getElementById('p-detail').value
+
+    if (!name || !price || !detail) {
+        alert('กรุณากรอกข้อมูลให้ครบ!')
+        return
+    }
+
+    fetch('http://localhost:8000/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ Name: name, Price: price, Detail: detail })
+    })
+    .then(res => res.json())
+    .then(result => {
+        closeModal()
+
+        // ✅ แสดง ID ใน Success Popup
+        document.getElementById('success-id').textContent = result.id
+        document.getElementById('success-Add').style.display = 'flex'
+
+        loadProducts()
+    })
+    .catch(err => console.error('Error:', err))
+}
+
+// ✅ ปิด Success Popup
+function closeSuccess() {
+    document.getElementById('success-Add').style.display = 'none'
+}
+loadProducts()
+</script>
 </html>

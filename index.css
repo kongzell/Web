@@ -10,8 +10,13 @@
 
 /* ส่วนเมนู */
 nav{
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    border-radius: 15px;
     padding: 1rem;
-    background-color: #4c21e8;
+    background: linear-gradient(-25deg, #794afa 0%, #4c21e8 100%) no-repeat 0 0/200%;
+    z-index: 3;
 }
 .nav-con{
     display: flex; /* จัดเรียง item ต่างๆใน container */
@@ -45,7 +50,7 @@ nav{
 
 /* ส่วนเนื้อหาหลัก */
 .maincontent{
-    background-color: #eae4e4;
+    background-color: rgb(red, green, blue);
 }
 .maincontent-con{
     display: flex; /*ข้อความเเละภาพอยู่เเถวเดียวกัน*/
@@ -78,10 +83,13 @@ nav{
 
 /*ส่วนรายการ*/
 .content{
-    background-color: thistle;
-    height: 600px;
+    background: linear-gradient(-25deg, #fca7ff 0%, #f6ffc0 100%) no-repeat 0 0/200%;
+    z-index: 3;
+    border-radius: 25px;
+    height: 650px;
 }
 .content-con{
+    margin-top: 80px;
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 1.5rem;
@@ -89,10 +97,22 @@ nav{
     aspect-ratio: 1/1;
 }
 .content-title{
+    display: flex;
+    height: 55px;
+    border-radius: 25px 25px 0 0;
     margin: 2rem 0;
     color: rgb(red, green, blue);
     background-color: #6649ce;
 }
+
+.content-title h2{
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align:left;
+}
+
 .content-item img{
     width: 250px;
     height: 300px;
