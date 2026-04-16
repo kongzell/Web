@@ -10,6 +10,7 @@
 }
 
 body{
+    font-family: 'Kanit', sans-serif;
     background: linear-gradient(-25deg, #ffc0dd 0%, #ffe0bc 100%) no-repeat 0 0/200%;
     z-index: 3;
 }
@@ -18,12 +19,14 @@ nav{
     position: sticky;
     top: 0;
     overflow: hidden;
+    height: 80px;
     border-radius: 15px;
     padding: 1rem;
     background: linear-gradient(-25deg, #794afa 0%, #4c21e8 100%) no-repeat 0 0/200%;
     z-index: 3;
 }
 .nav-con{
+    margin-top: 7px;
     background-color: rgba(red, green, blue, alpha);
     display: flex; /* จัดเรียง item ต่างๆใน container */
     flex-direction: row;
@@ -42,7 +45,7 @@ nav{
     outline: 3px solid red;
 }
 .menu{
-    margin-right: -246px;
+    margin-right: -336px;
     display: flex;
     list-style: none;
     align-items: center;
@@ -56,6 +59,129 @@ nav{
     color: #fff;
     text-decoration: none;
 }
+
+/* ส่วนเนื้อหาหลัก */
+.maincontent{
+    background-color: rgb(red, green, blue);
+}
+.maincontent-con{
+    margin-left: 200px;
+    display: flex; /*ข้อความเเละภาพอยู่เเถวเดียวกัน*/
+    align-items: flex-start;
+}
+.maincontent-info{
+    width: 50%;
+    padding: 2rem; /*ระยะห่างจากขอบ*/
+    overflow-y: auto;
+    max-height: 500px;
+    min-width: 1000px;
+    box-sizing: border-box;
+}
+.maincontent-info h3{
+    font-size: 2rem;
+}
+.maincontent-info p{
+    margin: 1rem 0;
+    word-break: break-word;
+}
+.maincontent-info .maincontent-btn{
+    background-color: #edf57f;
+    color: #6649ce;
+    padding: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.maincontent-img{
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+/* ===== SLIDER WRAPPER ===== */
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    min-width: 0;       /* ✅ เพิ่ม */
+}
+
+/* ===== แต่ละ Slide ===== */
+.slide-page {
+    min-width: 100%;  /* เต็มหน้าจอ */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* ===== ปุ่ม ===== */
+.slide-btn {
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 20px;
+    width: 45px;
+    height: 300px;
+    font-size: 28px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-btn:hover {
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+}
+
+/* ✅ ปุ่มลอยซ้าย-ขวา */
+.prev-btn {
+    position: absolute;
+    left: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.next-btn {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+/* ===== DOTS ===== */
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #6649ce;
+}
+
+
 
 .product-con{
     margin-top: 50px;
@@ -112,9 +238,8 @@ nav{
 .Addproduct{
     margin-top: 50px;
     margin-bottom: 50px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .btnAddproduct{
@@ -122,7 +247,7 @@ nav{
     z-index: 3;
     border: none;
     color: aliceblue;
-    padding: 40px 500px;
+    padding: 40px 200px;
     font-size: 25px;
     font-weight: bolder;
     border-radius: 50px;
@@ -136,6 +261,28 @@ nav{
 }
 
 .btnAddproduct:active{
+    transform: scale(0.95);
+}
+
+.btnCart{
+    background: linear-gradient(-25deg, #794afa 0%, #4c21e8 100%) no-repeat 0 0/200%;
+    z-index: 3;
+    border: none;
+    color: aliceblue;
+    padding: 40px 200px;
+    font-size: 25px;
+    font-weight: bolder;
+    border-radius: 50px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.btnCart:hover{
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.btnCart:active{
     transform: scale(0.95);
 }
 
@@ -278,4 +425,219 @@ nav{
 
 .btn-ok:hover {
     background: darkgreen;
+}
+ 
+/* ===== TOAST ===== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1d1d1f;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    z-index: 9999;
+    animation: fadeInOut 2.5s ease forwards;
+}
+@keyframes fadeInOut {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    15%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+    75%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+ 
+/* ===== CART MODAL ===== */
+#cart-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.cart-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 420px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+ 
+.cart-box h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #1d1d1f;
+}
+ 
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f7;
+    font-size: 14px;
+}
+ 
+.cart-item-name { flex: 1; color: #1d1d1f; }
+.cart-item-qty  { color: #6e6e73; min-width: 30px; }
+.cart-item-price { font-weight: 500; color: #1d1d1f; min-width: 100px; text-align: right; }
+ 
+.btn-remove {
+    background: none;
+    border: none;
+    color: #A32D2D;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
+}
+ 
+.cart-divider {
+    border-top: 1px solid #e5e5ea;
+    margin: 12px 0;
+}
+ 
+.cart-summary { margin-top: 12px; }
+ 
+.cart-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #6e6e73;
+    padding: 5px 0;
+}
+ 
+.cart-row.grand {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+ 
+.cart-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+ 
+.btn-pay {
+    flex: 1;
+    background: #534AB7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-pay:hover { background: #3C3489; }
+ 
+.btn-close-cart {
+    flex: 1;
+    background: transparent;
+    color: #1d1d1f;
+    border: 1px solid #d1d1d6;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-close-cart:hover { background: #f5f5f7; }
+ 
+/* ===== PAYMENT MODAL ===== */
+#payment-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.payment-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 380px;
+}
+ 
+.payment-icon {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+ 
+.payment-box h3 {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1d1d1f;
+}
+ 
+.payment-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #6e6e73;
+    padding: 6px 0;
+}
+ 
+.payment-row.grand {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+ 
+.payment-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+ 
+.btn-confirm {
+    flex: 1;
+    background: #534AB7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-confirm:hover { background: #3C3489; }
+ 
+.btn-close-modal {
+    flex: 1;
+    background: transparent;
+    color: #1d1d1f;
+    border: 1px solid #d1d1d6;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-close-modal:hover { background: #f5f5f7; }
+ 
+/* ===== SUCCESS PAYMENT ===== */
+#success-payment {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
 }
