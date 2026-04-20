@@ -82,19 +82,19 @@ nav{
 }
 
 /* ===== HERO ===== */
-.hero {
+.recommend {
     background: #1d1d1f;
     color: white;
     padding: 5rem 0 4rem;
     margin-bottom: 4rem;
 }
-.hero-inner {
+.recommend-inner {
     display: flex;
     align-items: center;
     gap: 3rem;
 }
-.hero-text { flex: 1; }
-.hero-badge {
+.recommend-text { flex: 1; }
+.recommend-badge {
     display: inline-block;
     background: rgba(255,255,255,0.1);
     color: #c9a96e;
@@ -104,31 +104,31 @@ nav{
     margin-bottom: 1.5rem;
     border: 1px solid rgba(201,169,110,0.3);
 }
-.hero-title {
+.recommend-title {
     font-size: 48px;
     font-weight: 600;
     color: white;
     margin-bottom: 1rem;
     line-height: 1.1;
 }
-.hero-sub {
+.recommend-sub {
     font-size: 16px;
     color: rgba(255,255,255,0.6);
     line-height: 1.7;
     margin-bottom: 2rem;
 }
-.hero-price {
+.recommend-price {
     font-size: 22px;
     font-weight: 500;
     color: white;
     margin-bottom: 2rem;
 }
-.hero-price span {
+.recommend-price span {
     font-size: 14px;
     color: rgba(255,255,255,0.5);
     font-weight: 300;
 }
-.btn-primary {
+.recommend-primary {
     background: #534AB7;
     color: white;
     padding: 0.9rem 2rem;
@@ -140,8 +140,8 @@ nav{
     margin-right: 12px;
     transition: background 0.2s;
 }
-.btn-primary:hover { background: #3C3489; }
-.btn-outline {
+.recommend-primary:hover { background: #3C3489; }
+.recommend-outline {
     background: transparent;
     color: white;
     padding: 0.9rem 2rem;
@@ -152,8 +152,8 @@ nav{
     border: 1px solid rgba(255,255,255,0.3);
     transition: background 0.2s;
 }
-.btn-outline:hover { background: rgba(255,255,255,0.1); }
-.hero-img img{
+.recommend-outline:hover { background: rgba(255,255,255,0.1); }
+.recommend-img img{
     width: 320px;
     height: 380px;
     background: rgba(255,255,255,0.05);

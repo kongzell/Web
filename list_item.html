@@ -100,8 +100,8 @@
     </div>
     </section>
 
-    <!-- ===== Cart Modal ===== -->
-    <div id="cart-modal">
+    <!-- ===== Cart ===== -->
+    <div id="cart">
         <div class="cart-box">
             <h3>🛒 รายการสั่งซื้อ</h3>
             <div id="cart-items"></div>
@@ -120,8 +120,8 @@
         </div>
     </div>
 
-    <!-- ===== Payment Confirm Modal ===== -->
-    <div id="payment-modal">
+    <!-- ===== Payment Confirm ===== -->
+    <div id="payment">
         <div class="payment-box">
             <div class="payment-icon">💳</div>
             <h3>ยืนยันการชำระเงิน</h3>
@@ -137,7 +137,7 @@
         </div>
     </div>
 
-    <!-- ===== Success Payment Modal ===== -->  
+    <!-- ===== Success Payment ===== -->  
     <div id="success-payment">
         <div class="success-box">
             <div class="success-icon">✅</div>
@@ -236,11 +236,11 @@ function openCart() {
     document.getElementById('cart-total-price').textContent  = totalPrice.toLocaleString() + ' บาท'
     document.getElementById('cart-vat').textContent          = vat.toFixed(2) + ' บาท'
     document.getElementById('cart-grand').textContent        = grand.toFixed(2) + ' บาท'
-    document.getElementById('cart-modal').style.display      = 'flex'
+    document.getElementById('cart').style.display      = 'flex'
 }
 
 function closeCart() {
-    document.getElementById('cart-modal').style.display = 'none'
+    document.getElementById('cart').style.display = 'none'
 }
 
 function removeFromCart(name) {
@@ -261,11 +261,11 @@ function openPayment() {
     document.getElementById('pay-grand').textContent = grand.toFixed(2) + ' บาท'
 
     closeCart()
-    document.getElementById('payment-modal').style.display = 'flex'
+    document.getElementById('payment').style.display = 'flex'
 }
 
 function closePayment() {
-    document.getElementById('payment-modal').style.display = 'none'
+    document.getElementById('payment').style.display = 'none'
 }
 
 function confirmPayment() {
