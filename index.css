@@ -58,7 +58,8 @@ nav{
 
 /* ส่วนเนื้อหาหลัก */
 .maincontent{
-    background-color: rgb(red, green, blue);
+    background-color: #1d1d1f;
+    min-height: 590px;
 }
 .maincontent-con{
     margin-left: 200px;
@@ -75,14 +76,17 @@ nav{
 }
 .maincontent-info h3{
     font-size: 2rem;
+    color: #fff;
 }
 .maincontent-info p{
     margin: 1rem 0;
     word-break: break-word;
+    color: #fff;
 }
 .maincontent-info .maincontent-btn{
-    background-color: #edf57f;
-    color: #6649ce;
+    background-color: rgb(63, 162, 255);
+    box-shadow: 0 0 10px #5ae6ff;
+    color: #ffffff;
     padding: 1rem;
     border-radius: 5px;
     text-decoration: none;
@@ -122,7 +126,7 @@ nav{
 
 /* ===== ปุ่ม ===== */
 .slide-btn {
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(85, 85, 85, 0.15);
     border: none;
     border-radius: 20px;
     width: 45px;
